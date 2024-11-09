@@ -1,81 +1,55 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Automated Filtering of Synthetic Training Data for Manufacturing QC
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Introduction
+In today's competitive manufacturing landscape, delivering products of pristine quality is paramount. For industry leaders like Apple, manual inspection is impractical given the immense scale of production. A critical challenge emerges when introducing new product lines: the lack of extensive training data for defect detection models. This data scarcity can potentially compromise quality control for novel products, directly impacting consumer satisfaction and manufacturing efficiency.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+### Project Objectives
+This internship project addressed two key challenges:
+1. Evaluating and implementing automated methods to filter synthetic training data, focusing on removing unrealistic artificially generated images
+2. Improving the quality of training datasets for defect detection models through systematic comparison of filtering approaches
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+### Methods
+The cornerstone of effective supervised machine learning models lies in the quality of training data. While Apple employs artificial image generation techniques for new products, this process often yields unrealistic images that compromise model performance. To reduce the burden on human labellers, we investigated four automated approaches:
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0;">
+    <div style="text-align: center;">
+        <img src="/assets/img/classification-model-histogram.png" width="200" height="150" alt="Classification Model Results" style="width: 100%; height: auto;">
+        <em>Figure 1: Classification Model</em>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div style="text-align: center;">
+        <img src="/assets/img/voxel.png" width="200" height="150" alt="Voxel Embeddings" style="width: 100%; height: auto;">
+        <em>Figure 2: Voxel Embeddings</em>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div style="text-align: center;">
+        <img src="/assets/img/mm1-histogram.png" width="200" height="150" alt="Multimodal Model Results" style="width: 100%; height: auto;">
+        <em>Figure 3: Multimodal Model</em>
     </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div style="text-align: center;">
+        <img src="/assets/img/image-reward-histogram.png" width="200" height="150" alt="ImageReward Results" style="width: 100%; height: auto;">
+        <em>Figure 4: ImageReward</em>
     </div>
 </div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+1. The classification model, initially trained to distinguish between escape and overkill cases, failed to transfer effectively to our use case.
+2. Embeddings from pre-trained models available in Voxel [3] showed significant overlap between realistic and unrealistic images.
+3. Our internal foundational multimodal model yielded similar scores across images, failing to provide clear differentiation.
+4. The ImageReward model [2] demonstrated the best performance in filtering unrealistic images.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+### Results and Discussion
+The ImageReward model [2] emerged as the most effective solution, demonstrating superior performance in filtering unrealistic images. By implementing a threshold score of -2, we successfully eliminated approximately 25% of unrealistic images from a dataset of 2000 images. This achievement is particularly significant as it required no manufacturing-specific training.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Personal Contribution
+As an intern, I led the evaluation of multiple automated filtering approaches and implemented the successful ImageReward-based solution. This work directly contributed to streamlining the data preprocessing pipeline and enhancing the efficiency of defect detection processes for new products.
 
-{% raw %}
+### References
+[1] D. Weimer, B. Scholz-Reiter, and M. Shpitalni, "Design of deep convolutional neural network architectures for automated feature extraction in industrial inspection," CIRP Annals, vol. 65, no. 1, pp. 417–420, 2016, doi: https://doi.org/10.1016/j.cirp.2016.04.072.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+[2] J. Xu et al., "ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation," arXiv.org, Jun. 06, 2023. https://arxiv.org/abs/2304.05977
 
-{% endraw %}
+[3] "FiftyOne — FiftyOne 0.19.1 documentation," docs.voxel51.com. https://docs.voxel51.com/

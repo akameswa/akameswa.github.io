@@ -1,81 +1,124 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Supervised Learning Models for Manufacturing Quality Control
 importance: 3
 category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Introduction
+In today's competitive manufacturing landscape, delivering products of pristine quality is paramount. While computer vision techniques like semantic segmentation and object detection have revolutionized automated inspection, they face a significant challenge: new product lines lack the extensive labeled training data needed for these models. This data scarcity can compromise quality control effectiveness for novel products.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+### Project Objectives & Role
+During this internship project, I focused on enhancing existing supervised models through:
+1. Dataset preprocessing optimization
+2. Architectural innovations:
+   - Evaluating transformer-based architectures for segmentation
+   - Testing newer YOLO variants for detection
+3. Hyperparameter tuning for performance optimization
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+### Methods
+We evaluated two primary approaches:
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+**Segmentation Models:**
+- Compared UperNet (CNN-based) baseline with SegFormer (transformer-based)
+- Conducted extensive hyperparameter optimization
+- Measured performance using IoU scores
+
+**Object Detection Models:**
+- Evaluated YOLOv8 series against YOLOv5s baseline
+- Tested multiple model variants (YOLOv8s, YOLOv8m, YOLOv8x)
+- Assessed using mAP@IoU=0.5 metric
+
+### Results
+
+**Segmentation Model Performance:**
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>IoU Score</th>
+        <th>Inference Speed</th>
+        <th>Model Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>UperNet</td>
+        <td>0.645</td>
+        <td>8.5 min</td>
+        <td>254 MB</td>
+      </tr>
+      <tr>
+        <td>SegFormer</td>
+        <td>0.674</td>
+        <td>9.8 min</td>
+        <td>181 MB</td>
+      </tr>
+      <tr>
+        <td>SegFormer (Optimized)</td>
+        <td>0.695</td>
+        <td>9.3 min</td>
+        <td>181 MB</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+
+**Object Detection Model Performance:**
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>mAP@IoU=0.5</th>
+        <th>Inference Speed</th>
+        <th>Model Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>YOLOv5s</td>
+        <td>0.657</td>
+        <td>5 min</td>
+        <td>28 MB</td>
+      </tr>
+      <tr>
+        <td>YOLOv8s</td>
+        <td>0.687</td>
+        <td>5.2 min</td>
+        <td>61 MB</td>
+      </tr>
+      <tr>
+        <td>YOLOv8m</td>
+        <td>0.690</td>
+        <td>5.8 min</td>
+        <td>117 MB</td>
+      </tr>
+      <tr>
+        <td>YOLOv8x</td>
+        <td>0.698</td>
+        <td>7.4 min</td>
+        <td>273 MB</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Impact
+The project achieved significant improvements:
+- 7.5% increase in segmentation performance with optimized SegFormer
+- 6% improvement in detection accuracy with YOLOv8x
+- Enhanced capability to detect subtle defects
+- More efficient quality control processes
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+### References
+[1] T. Xiao, Y. Liu, B. Zhou, Y. Jiang, and J. Sun, "Unified Perceptual Parsing for Scene Understanding," arXiv.org, Jul. 26, 2018.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+[2] E. Xie, W. Wang, Z. Yu, A. Anandkumar, J. M. Alvarez, and P. Luo, "SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers," arXiv:2105.15203 [cs], Oct. 2021.
 
-{% raw %}
+[3] A. Dosovitskiy et al., "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale," arXiv:2010.11929 [cs], Oct. 2020.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+[4] C.-Y. Wang, A. Bochkovskiy, and H.-Y. M. Liao, "YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors," arXiv:2207.02696 [cs], Jul. 2022.
