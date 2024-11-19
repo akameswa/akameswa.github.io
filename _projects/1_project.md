@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Automated Filtering of Synthetic Training Data for Manufacturing QC
+title: Automated Filtering of Synthetic Training Data
 importance: 1
+img: assets/img/filter.png
 category: work
 related_publications: false
 ---
@@ -48,7 +49,7 @@ The ImageReward model [2] emerged as the most effective solution, demonstrating 
 As an intern, I led the evaluation of multiple automated filtering approaches and implemented the successful ImageReward-based solution. This work directly contributed to streamlining the data preprocessing pipeline and enhancing the efficiency of defect detection processes for new products.
 
 ### References
-[1] D. Weimer, B. Scholz-Reiter, and M. Shpitalni, "Design of deep convolutional neural network architectures for automated feature extraction in industrial inspection," CIRP Annals, vol. 65, no. 1, pp. 417–420, 2016, doi: https://doi.org/10.1016/j.cirp.2016.04.072.
+[1] D. Weimer, B. Scholz-Reiter, and M. Shpitalni, "Design of deep convolutional neural network architectures for automated feature extraction in industrial inspection," CIRP Annals, vol. 65, no. 1, pp. 417–420, 2016, doi: https://doi.org/10.1016/j.cirp.2016.04.072
 
 [2] J. Xu et al., "ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation," arXiv.org, Jun. 06, 2023. https://arxiv.org/abs/2304.05977
 

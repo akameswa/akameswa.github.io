@@ -2,65 +2,39 @@
 layout: page
 title: Mixture of Expert Model for Code Generation
 importance: 4
+img: assets/img/moe-arch.png
 category: work
 ---
 
 ### Introduction
-In today's machine learning landscape, code generation models face significant challenges in producing accurate, language-specific code. While large language models have demonstrated impressive capabilities, their monolithic architecture often struggles to maintain consistent quality across different programming languages. This project addresses this challenge through a novel application of the Mixture-of-Experts (MoE) framework to enhance code generation performance.
+The exponential growth in software development demands has created an urgent need for efficient, accessible code generation solutions. While large language models have shown promising results in code generation, their computational requirements often restrict access to major corporations with substantial resources. Our project addresses this critical challenge by implementing a Mixture-of-Experts (MoE) framework that makes advanced code generation capabilities accessible to a broader developer community.
 
-### Project Objectives
-1. Evaluate and implement a Mixture-of-Experts approach for code generation across multiple programming languages
-2. Improve code generation quality through specialized expert models
-3. Compare performance between baseline and MoE approaches using industry-standard metrics
+### Project Objective
+We aim to develop a cost-effective, high-performance code generation system using the MoE framework, capable of generating quality code across multiple programming languages while maintaining efficiency and accessibility.
 
-### Methods
+![Mixture-of-Experts Architecture for Code Generation](/assets/img/moe-arch.png){:style="width:50%;"}
 
-#### Model Architecture
-The project utilizes the Mistral-7B architecture as the foundation, with the following key components:
+### Innovation and Social Impact
+Our approach democratizes access to advanced AI-powered code generation by:
+- Reducing computational requirements by 50% compared to traditional models
+- Maintaining high accuracy through specialized language experts
+- Making enterprise-level code generation accessible to individual developers and smaller organizations
 
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Component</th>
-        <th>Specification</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Base Model</td>
-        <td>Mistral-7B</td>
-      </tr>
-      <tr>
-        <td>Expert Models</td>
-        <td>4 (Python, Java, JavaScript, C++)</td>
-      </tr>
-      <tr>
-        <td>Context Length</td>
-        <td>32k tokens</td>
-      </tr>
-      <tr>
-        <td>Parameters</td>
-        <td>7B per expert</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+### Methodology
 
-#### Training Process
-We implemented a three-phase approach:
+#### Base Architecture
+We built our system on the Mistral-7B model, implementing specialized experts for Python, Java, JavaScript, and C++. The architecture employs a sophisticated gating mechanism that routes queries to the most appropriate language expert.
 
-**Fine-tuning Phase:**
-- Parameter-efficient fine-tuning using QLoRA
-- Language-specific training on curated datasets
-- 48-72 hours training per language
+![Performance distribution comparison between baseline and fine-tuned models](/assets/img/baseline-finetune-comparison.png){:style="width:50%;"}
 
-**Model Merging:**
-- TIES-merging for expert model integration
-- Task vector optimization for language specialization
+#### Implementation Details
+- **Dataset:** 10,000 high-quality text-to-code pairs per language
+- **Training Infrastructure:** AWS A10G GPU with 26GB RAM
+- **Fine-tuning Duration:** 48-72 hours per language expert
+- **Evaluation Metric:** CodeBLEU benchmark
 
 ### Results
-The MoE implementation demonstrated significant improvements:
+Our MoE implementation achieved significant improvements:
 
 <div class="table-responsive">
   <table class="table">
@@ -68,53 +42,46 @@ The MoE implementation demonstrated significant improvements:
       <tr>
         <th>Language</th>
         <th>Baseline Score</th>
-        <th>MoE Score</th>
+        <th>Fine-tuned Score</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Python</td>
-        <td>0.180</td>
-        <td>0.400</td>
+        <td>0.1800</td>
+        <td>0.4000</td>
       </tr>
       <tr>
         <td>Java</td>
-        <td>0.186</td>
-        <td>0.429</td>
+        <td>0.1860</td>
+        <td>0.4287</td>
       </tr>
       <tr>
         <td>JavaScript</td>
-        <td>0.191</td>
-        <td>0.418</td>
+        <td>0.1909</td>
+        <td>0.4182</td>
       </tr>
       <tr>
         <td>C++</td>
-        <td>0.217</td>
-        <td>0.334</td>
+        <td>0.2170</td>
+        <td>0.3340</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-Overall, the MoE approach achieved a 51% improvement in CodeBLEU scores across all languages.
+### Personal Contribution
+As part of the four-member team, my primary responsibilities included:
+- Implementing the gating mechanism for expert selection
+- Fine-tuning individual language experts
+- Conducting performance evaluations using CodeBLEU
+- Documenting methodology and results
 
-### Discussion
-The results demonstrate the effectiveness of specialized expert models in improving code generation quality. Key findings include:
-- Consistent performance improvements across all target languages
-- Enhanced language-specific code generation capabilities
-- Reduced computational overhead compared to monolithic approaches
+### Discussions
+The project has laid groundwork for several promising extensions:
+- Expanding language support
+- Implementing attention-layer expert selection
+- Enhancing the gating mechanism for better expert routing
+- Incorporating human feedback through RLHF
 
-### Future Work
-Several promising directions for future research include:
-- Expanding the expert model coverage to additional programming languages
-- Implementing more sophisticated routing mechanisms
-- Exploring hybrid architectures for improved performance
-
-### References
-[1] Mixtral of Experts, arXiv:2401.04088
-
-[2] CodeBLEU: a Method for Automatic Evaluation of Code Synthesis, arXiv:2009.10297
-
-[3] Outrageously Large Neural Networks: arXiv:1701.06538
-
-[4] SantaCoder: don't reach for the stars!, arXiv:2301.03988
+This project demonstrates that complex AI capabilities can be made accessible without compromising performance, potentially transforming how developers across the resource spectrum approach code generation.

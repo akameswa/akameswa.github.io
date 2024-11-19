@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: GRA @ CMU | xApple 
+subtitle: Apple | MS @ CMU 
 
 profile:
   align: right

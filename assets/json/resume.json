@@ -102,12 +102,6 @@
       "summary": "Paper titled 'An Abstract Model for Onshore Wind turbine Blade Maintenance' won the 'Best Paper Award' at the '10th RSI International Conference on Robotics and Mechatronics (ICRoM)' among a pool of 1000+ submissions across the world."
     },
     {
-      "title": "Most Distinguished Paper - IPDIMS",
-      "date": "2021-02-01",
-      "awarder": "Innovative Product Design and Intelligent Manufacturing Systems",
-      "summary": "Paper titled 'Self-Sustainable Toilet System' won the 'Most Distinguished Paper Award' at the national conference 'Innovative Product Design and Intelligent Manufacturing Systems (IPDIMS)' among a pool of 100+ submissions across the country."
-    },
-    {
       "title": "Working Internships in Science and Engineering (WISE)",
       "date": "2023-05-01", 
       "awarder": "DAAD (German Academic Exchange Service)",
@@ -146,8 +140,8 @@
       "level": "Advanced",
       "keywords": [
         "Python",
-        "C/C++",
-        "JavaScript"
+        "C++",
+        "Js"
       ]
     },
     {
@@ -155,22 +149,9 @@
       "level": "Advanced",
       "keywords": [
         "PyTorch",
-        "TensorFlow",
-        "Keras",
         "Computer Vision",
-        "Natural Language Processing (NLP)",
-        "CUDA"
-      ]
-    },
-    {
-      "name": "Data Science & Analysis",
-      "level": "Advanced",
-      "keywords": [
         "NumPy",
-        "Pandas",
-        "Jupyter",
-        "Data Analysis",
-        "Data Science"
+        "Data Analysis"
       ]
     },
     {
@@ -178,8 +159,8 @@
       "level": "Advanced",
       "keywords": [
         "AWS",
-        "Google Cloud Platform",
-        "Linux/Unix"
+        "GCP",
+        "Linux"
       ]
     },
     {
@@ -187,7 +168,7 @@
       "level": "Advanced",
       "keywords": [
         "SolidWorks",
-        "FEM/FEA",
+        "FEA",
         "CAD"
       ]
     }

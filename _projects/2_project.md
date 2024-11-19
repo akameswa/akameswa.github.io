@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Unsupervised Anomaly Detection for Manufacturing QC
+title: Unsupervised Anomaly Detection for Manufacturing Quality Control
 importance: 2
+img: assets/img/anomaly-detection.png
 category: work
 ---
 
@@ -70,7 +71,7 @@ EfficientAd [2] demonstrated superior performance with:
 - Highest recall score (0.55607)
 - Effective localization of anomalous regions
 
-### Impact
+### Discussion
 The unsupervised models serve multiple purposes:
 - Generate annotation data for supervised models
 - Assist in data quality inspection
