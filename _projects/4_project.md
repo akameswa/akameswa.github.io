@@ -19,13 +19,14 @@ Our approach democratizes access to advanced AI-powered code generation by:
 - Reducing computational requirements by 50% compared to traditional models
 - Maintaining high accuracy through specialized language experts
 - Making enterprise-level code generation accessible to individual developers and smaller organizations
+- **Social Value:** By lowering the barrier to entry, we empower a diverse range of developers, fostering innovation and inclusivity in the tech community
 
 ### Methodology
 
 #### Base Architecture
 We built our system on the Mistral-7B model, implementing specialized experts for Python, Java, JavaScript, and C++. The architecture employs a sophisticated gating mechanism that routes queries to the most appropriate language expert.
 
-![Performance distribution comparison between baseline and fine-tuned models](/assets/img/baseline-finetune-comparison.png){:style="width:50%;"}
+![Performance distribution comparison between baseline and fine-tuned models](/assets/img/baseline-finetune-comparison.png){:style="width:50%;"} 
 
 #### Implementation Details
 - **Dataset:** 10,000 high-quality text-to-code pairs per language
@@ -76,6 +77,7 @@ As part of the four-member team, my primary responsibilities included:
 - Fine-tuning individual language experts
 - Conducting performance evaluations using CodeBLEU
 - Documenting methodology and results
+- **Role:** I played a crucial role in ensuring the system's efficiency and accuracy, directly contributing to the project's success and its positive social impact.
 
 ### Discussions
 The project has laid groundwork for several promising extensions:

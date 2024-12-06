@@ -80,6 +80,17 @@ The unsupervised models serve multiple purposes:
   - Lighting variations
   - Layout differences
 - Flag potentially defective samples without pre-existing annotations
+- **Social Value:** By improving defect detection, we enhance product quality and safety, ultimately benefiting consumers and manufacturers.
+
+### Personal Contribution
+In this internship project, I led the evaluation of unsupervised anomaly detection approaches for manufacturing quality control. The key objectives were:
+1. Evaluate and compare ten different anomaly detection models, focusing on:
+   - Processing capability for non-square images
+   - Heat map generation quality
+   - Model size and inference speed
+   - Detection accuracy (recall)
+2. Identify the most effective model for production deployment
+- **Role:** My leadership and analytical skills were instrumental in identifying the best-performing model, contributing to the project's success and its positive social impact.
 
 ### References
 [1] D. Weimer, B. Scholz-Reiter, and M. Shpitalni, "Design of deep convolutional neural network architectures for automated feature extraction in industrial inspection," CIRP Annals, vol. 65, no. 1, pp. 417–420, 2016.

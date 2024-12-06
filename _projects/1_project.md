@@ -44,9 +44,11 @@ The cornerstone of effective supervised machine learning models lies in the qual
 
 ### Results and Discussion
 The ImageReward model [2] emerged as the most effective solution, demonstrating superior performance in filtering unrealistic images. By implementing a threshold score of -2, we successfully eliminated approximately 25% of unrealistic images from a dataset of 2000 images. This achievement is particularly significant as it required no manufacturing-specific training.
+- **Social Value:** By improving the quality of training datasets, we enhance defect detection models, leading to better product quality and consumer satisfaction.
 
 ### Personal Contribution
 As an intern, I led the evaluation of multiple automated filtering approaches and implemented the successful ImageReward-based solution. This work directly contributed to streamlining the data preprocessing pipeline and enhancing the efficiency of defect detection processes for new products.
+- **Role:** My contributions were key to the project's success, demonstrating my ability to apply innovative solutions to real-world challenges and deliver social value.
 
 ### References
 [1] D. Weimer, B. Scholz-Reiter, and M. Shpitalni, "Design of deep convolutional neural network architectures for automated feature extraction in industrial inspection," CIRP Annals, vol. 65, no. 1, pp. 417–420, 2016, doi: https://doi.org/10.1016/j.cirp.2016.04.072

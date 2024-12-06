@@ -108,8 +108,7 @@ This implementation has resulted in:
 
 ### Discussion
 The project demonstrates that advanced computer vision techniques can significantly improve manufacturing quality control, even with limited initial training data. The optimized models now serve as a foundation for rapid deployment of automated inspection systems across various manufacturing lines.
-
-The success of this project has established a framework for implementing advanced quality control systems in manufacturing environments with limited initial data, contributing to both operational efficiency and product quality assurance.
+- **Social Value:** By enhancing quality control, we contribute to safer consumer products and more efficient manufacturing processes, benefiting both businesses and end-users.
 
 ### Personal Contribution
 As the lead computer vision engineer on this project, my responsibilities included:
@@ -117,6 +116,7 @@ As the lead computer vision engineer on this project, my responsibilities includ
 - Conducting extensive hyperparameter tuning
 - Developing the evaluation framework for model comparison
 - Integrating the models into the production environment
+- **Role:** My leadership and technical expertise were pivotal in achieving the project's objectives and delivering tangible social benefits.
 
 ### References
 [1] T. Xiao, Y. Liu, B. Zhou, Y. Jiang, and J. Sun, "Unified Perceptual Parsing for Scene Understanding," arXiv.org, Jul. 26, 2018.
